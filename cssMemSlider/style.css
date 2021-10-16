@@ -1,0 +1,49 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: content-box;
+}
+ul, ol, li {
+    list-style: none;
+}
+html, body {
+    height: 100%;
+    line-height: 125%;
+    font-size: 24px;
+    font-family: 'Ubuntu';
+    scroll-behavior: smooth;
+}
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+button {
+    background-color: transparent;
+}
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+._container {
+    max-width: 1440px;
+}
+.header, .footer {
+    background: #000000;
+    min-height: 3vw;
+    color: #FFFFFF;
+    padding: 10px 15px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    flex: 1 1 auto;
+}
