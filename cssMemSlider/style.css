@@ -38,7 +38,7 @@ button {
 .header, .main, .footer {
     background: #eeeeee;
 }
-.header, .footer {
+.header {
     min-height: 100px;
     color: #000000;
     padding: 10px;
@@ -48,10 +48,17 @@ button {
     font-size: 3rem;
     font-weight: 500;
 }
-.header__container, .main__container, .footer__container {
+.header__container, .main__container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
 }
 .main {
     flex: 1 1 auto;
@@ -59,6 +66,15 @@ button {
     justify-content: center;
     align-items: center;
     padding: 10px;
+}
+.footer {
+    min-height: 100px;
+    color: #000000;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .slider {
     box-sizing: border-box;
@@ -75,15 +91,36 @@ button {
     grid-template-areas: "image image" "caption controls";
 }
 .slider__image {
+    position: relative;
     grid-area: image;
+    opacity: 0;
+}
+.image1 {
     background: #000 url('img/1.webp') center/contain no-repeat;
+} 
+.image2 {
+    background: #000 url('img/2.webp') center/contain no-repeat;
+}
+.image3 {
+    background: #000 url('img/3.webp') center/contain no-repeat;
+}
+.image4 {
+    background: #000 url('img/4.webp') center/contain no-repeat;
+}
+.image5 {
+    background: #000 url('img/5.webp') center/contain no-repeat;
+}
+.image6 {
+    background: #000 url('img/6.webp') center/contain no-repeat;
 }
 .slider__caption {
     grid-area: caption;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 2rem;
     color: #FFF;
+    opacity: 0;
+    display: none;
 }
 .slider__controls {
     grid-area: controls;
@@ -102,9 +139,7 @@ button {
     justify-content: center;
     align-items: center;
 }
-.slider__button input {
-    opacity: 0;
-    cursor: pointer;
+input {
     display: none;
 }
 .checkmark {
@@ -123,6 +158,63 @@ button {
 .slider__button:active .checkmark {
     background-color: yellowgreen;
 }
-.slider__button input:checked ~ .checkmark {
+#slide1:checked ~ .slider__controls .slider__button .checkmark__slide1 {
     background-color: yellow;
+}
+#slide2:checked ~ .slider__controls .slider__button .checkmark__slide2 {
+    background-color: yellow;
+}
+#slide3:checked ~ .slider__controls .slider__button .checkmark__slide3 {
+    background-color: yellow;
+}
+#slide4:checked ~ .slider__controls .slider__button .checkmark__slide4 {
+    background-color: yellow;
+}
+#slide5:checked ~ .slider__controls .slider__button .checkmark__slide5 {
+    background-color: yellow;
+}
+#slide6:checked ~ .slider__controls .slider__button .checkmark__slide6 {
+    background-color: yellow;
+}
+#slide1:checked ~ .image1 {
+    opacity: 1;
+}
+#slide2:checked ~ .image2 {
+    opacity: 1;
+}
+#slide3:checked ~ .image3 {
+    opacity: 1;
+}
+#slide4:checked ~ .image4 {
+    opacity: 1;
+}
+#slide5:checked ~ .image5 {
+    opacity: 1;
+}
+#slide6:checked ~ .image6 {
+    opacity: 1;
+}
+#slide1:checked ~ .caption1 {
+    opacity: 1;
+    display: inline;
+}
+#slide2:checked ~ .caption2 {
+    opacity: 1;
+    display: inline;
+}
+#slide3:checked ~ .caption3 {
+    opacity: 1;
+    display: inline;
+}
+#slide4:checked ~ .caption4 {
+    opacity: 1;
+    display: inline;
+}
+#slide5:checked ~ .caption5 {
+    opacity: 1;
+    display: inline;
+}
+#slide6:checked ~ .caption6 {
+    opacity: 1;
+    display: inline;
 }

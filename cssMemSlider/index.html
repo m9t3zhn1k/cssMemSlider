@@ -18,38 +18,54 @@
         <main class="main">
             <div class="_container main__container">
                 <div class="slider">
-                    <div class="slider__image"></div>
-                    <span class="slider__caption">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, fugit!
+                    <input type="radio" name="point" id="slide1" checked>
+                    <input type="radio" name="point" id="slide2">
+                    <input type="radio" name="point" id="slide3">
+                    <input type="radio" name="point" id="slide4">
+                    <input type="radio" name="point" id="slide5">
+                    <input type="radio" name="point" id="slide6">
+                    <div class="slider__image image1"></div>
+                    <div class="slider__image image2"></div>
+                    <div class="slider__image image3"></div>
+                    <div class="slider__image image4"></div>
+                    <div class="slider__image image5"></div>
+                    <div class="slider__image image6"></div>
+                    <span class="slider__caption caption1">
+                        Написал код. - Не работает.
+                    </span>
+                    <span class="slider__caption caption2">
+                        Не пишешь код - нет и ошибок.
+                    </span>
+                    <span class="slider__caption caption3">
+                        Опять он о своем JS думает.
+                    </span>
+                    <span class="slider__caption caption4">
+                        На этой неделе астрологи объявляют неделю слайдеров.
+                    </span>
+                    <span class="slider__caption caption5">
+                        А вы точно фронтенд-разработчик?
+                    </span>
+                    <span class="slider__caption caption6">
+                        Сдал таск на максимальный балл.
                     </span>
                     <div class="slider__controls">
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide1" checked>
-                            <span class="checkmark"></span>
+                        <label class="slider__button" for="slide1">
+                            <span class="checkmark checkmark__slide1"></span>
                         </label>
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide2">
-                            <span class="checkmark"></span>
+                        <label class="slider__button" for="slide2">
+                            <span class="checkmark checkmark__slide2"></span>
                         </label>
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide3">
-                            <span class="checkmark"></span>
+                        <label class="slider__button" for="slide3">
+                            <span class="checkmark checkmark__slide3"></span>
                         </label>
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide4">
-                            <span class="checkmark"></span>
+                        <label class="slider__button" for="slide4">
+                            <span class="checkmark checkmark__slide4"></span>
                         </label>
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide5">
-                            <span class="checkmark"></span>
+                        <label class="slider__button" for="slide5">
+                            <span class="checkmark checkmark__slide5"></span>
                         </label>
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide6">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="slider__button">
-                            <input type="radio" name="point" id="slide7">
-                            <span class="checkmark"></span>
+                        <label class="slider__button" for="slide6">
+                            <span class="checkmark checkmark__slide6"></span>
                         </label>
                     </div>
                 </div>
@@ -57,7 +73,9 @@
         </main>
         <footer class="footer">
             <div class="_container footer__container">
-                <span>2021</span>
+                <p class="footer___item">&copy; 2021</p>
+                <a class="footer___item footer__rs-logo" href="https://rs.school/js/" target="_blank">The Rolling Scopes School</a>
+                <a class="footer___item" href="https://github.com/m9t3zhn1k" target="_blank">m9t3zhn1k</a>
             </div>
         </footer>
     </div>
