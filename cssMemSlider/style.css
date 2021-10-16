@@ -71,10 +71,12 @@ button {
     min-height: 100px;
     color: #000000;
     padding: 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.footer__container a:hover {
+    color: #797979;
 }
 .slider {
     box-sizing: border-box;
@@ -94,6 +96,8 @@ button {
     position: relative;
     grid-area: image;
     opacity: 0;
+    transition: all 0.4s;
+    left: 100%;
 }
 .image1 {
     background: #000 url('img/1.webp') center/contain no-repeat;
@@ -120,7 +124,8 @@ button {
     line-height: 2rem;
     color: #FFF;
     opacity: 0;
-    display: none;
+    visibility: hidden;
+    transition: all 0.4s;
 }
 .slider__controls {
     grid-area: controls;
@@ -178,43 +183,49 @@ input {
 }
 #slide1:checked ~ .image1 {
     opacity: 1;
+    left: 0;
 }
 #slide2:checked ~ .image2 {
     opacity: 1;
+    left: 0;
 }
 #slide3:checked ~ .image3 {
     opacity: 1;
+    left: 0;
 }
 #slide4:checked ~ .image4 {
     opacity: 1;
+    left: 0;
 }
 #slide5:checked ~ .image5 {
     opacity: 1;
+    left: 0;
 }
 #slide6:checked ~ .image6 {
     opacity: 1;
+    left: 0;
 }
 #slide1:checked ~ .caption1 {
     opacity: 1;
-    display: inline;
+    visibility: visible;
 }
 #slide2:checked ~ .caption2 {
     opacity: 1;
-    display: inline;
+    visibility: visible;
 }
 #slide3:checked ~ .caption3 {
     opacity: 1;
-    display: inline;
+    visibility: visible;
 }
 #slide4:checked ~ .caption4 {
     opacity: 1;
-    display: inline;
+    visibility: visible;
 }
 #slide5:checked ~ .caption5 {
     opacity: 1;
-    display: inline;
+    visibility: visible;
 }
 #slide6:checked ~ .caption6 {
     opacity: 1;
-    display: inline;
+    visibility: visible;
 }
