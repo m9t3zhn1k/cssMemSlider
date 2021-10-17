@@ -27,16 +27,20 @@ button {
 }
 .wrapper {
     height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #eeeeee;
+    justify-content: center;
+    align-items: center;
 }
 ._container {
     width: 100%;
-    height: 100%;
     max-width: 1280px;
 }
 .header, .main, .footer {
-    background: #eeeeee;
+    width: 100%;
+    box-sizing: border-box;
 }
 .header {
     min-height: 100px;
@@ -57,11 +61,10 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 .main {
-    flex: 1 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,13 +85,12 @@ button {
     box-sizing: border-box;
     padding: 30px 45px;
     width: 100%;
-    height: 100%;
     background: #494949;
     border-radius: 1vw;
     overflow: hidden;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 6fr 1fr;
     grid-gap: 4%;
     grid-template-areas: "image image" "caption controls";
 }
@@ -228,4 +230,32 @@ input {
 #slide6:checked ~ .caption6 {
     opacity: 1;
     visibility: visible;
+}
+@media (max-width: 1300px) {
+    .header, .footer {
+        min-height: 7.692vw;
+    }
+    html, body {
+        font-size: calc(4.5px + 1.5vw);
+    }
+}
+@media (max-width: 1023px) {
+    .slider {
+        padding: 3vw 4.4vw;
+    }
+}
+@media (max-width: 767px) {
+    .slider {
+        height: 64.32vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10fr 2fr 2fr;
+        grid-gap: 1.5vw;
+        grid-template-areas: "image" "controls" "caption ";
+    }
+    .slider__controls {
+        justify-self: center;
+    }
+    .slider__button {
+        height: 100%;
+    }
 }
