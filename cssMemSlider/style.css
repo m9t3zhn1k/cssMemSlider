@@ -8,7 +8,7 @@ ul, ol, li {
     list-style: none;
 }
 html, body {
-    height: 100%;
+    min-height: 100%;
     line-height: 125%;
     font-size: 24px;
     font-family: 'Ubuntu';
@@ -26,7 +26,7 @@ button {
     background-color: transparent;
 }
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
     background: #eeeeee;
     display: flex;
     flex-direction: column;
@@ -78,12 +78,15 @@ button {
     justify-content: center;
     align-items: center;
 }
+.footer__container a {
+    transition: all 0.25s;
+}
 .footer__container a:hover {
-    color: #797979;
+    color: #5a5a5a;
 }
 .slider {
     box-sizing: border-box;
-    padding: 30px 45px;
+    padding: 15px 30px;
     width: 100%;
     background: #494949;
     border-radius: 1vw;
@@ -95,11 +98,10 @@ button {
     grid-template-areas: "image image" "caption controls";
 }
 .slider__image {
-    position: relative;
     grid-area: image;
     opacity: 0;
     transition: all 0.4s;
-    left: 100%;
+    transform: translateX(100%);
 }
 .image1 {
     background: #000 url('img/1.webp') center/contain no-repeat;
@@ -123,7 +125,7 @@ button {
     grid-area: caption;
     font-size: 1.5rem;
     font-weight: 300;
-    line-height: 2rem;
+    line-height: 130%;
     color: #FFF;
     opacity: 0;
     visibility: hidden;
@@ -136,7 +138,6 @@ button {
 }
 .slider__button {
     display: block;
-    position: relative;
     cursor: pointer;
     user-select: none;
     height: 50%;
@@ -165,68 +166,28 @@ input {
 .slider__button:active .checkmark {
     background-color: yellowgreen;
 }
-#slide1:checked ~ .slider__controls .slider__button .checkmark__slide1 {
-    background-color: yellow;
-}
-#slide2:checked ~ .slider__controls .slider__button .checkmark__slide2 {
-    background-color: yellow;
-}
-#slide3:checked ~ .slider__controls .slider__button .checkmark__slide3 {
-    background-color: yellow;
-}
-#slide4:checked ~ .slider__controls .slider__button .checkmark__slide4 {
-    background-color: yellow;
-}
-#slide5:checked ~ .slider__controls .slider__button .checkmark__slide5 {
-    background-color: yellow;
-}
+#slide1:checked ~ .slider__controls .slider__button .checkmark__slide1,
+#slide2:checked ~ .slider__controls .slider__button .checkmark__slide2,
+#slide3:checked ~ .slider__controls .slider__button .checkmark__slide3,
+#slide4:checked ~ .slider__controls .slider__button .checkmark__slide4,
+#slide5:checked ~ .slider__controls .slider__button .checkmark__slide5,
 #slide6:checked ~ .slider__controls .slider__button .checkmark__slide6 {
     background-color: yellow;
 }
-#slide1:checked ~ .image1 {
-    opacity: 1;
-    left: 0;
-}
-#slide2:checked ~ .image2 {
-    opacity: 1;
-    left: 0;
-}
-#slide3:checked ~ .image3 {
-    opacity: 1;
-    left: 0;
-}
-#slide4:checked ~ .image4 {
-    opacity: 1;
-    left: 0;
-}
-#slide5:checked ~ .image5 {
-    opacity: 1;
-    left: 0;
-}
+#slide1:checked ~ .image1,
+#slide2:checked ~ .image2,
+#slide3:checked ~ .image3,
+#slide4:checked ~ .image4,
+#slide5:checked ~ .image5,
 #slide6:checked ~ .image6 {
     opacity: 1;
-    left: 0;
+    transform: translateX(0%);
 }
-#slide1:checked ~ .caption1 {
-    opacity: 1;
-    visibility: visible;
-}
-#slide2:checked ~ .caption2 {
-    opacity: 1;
-    visibility: visible;
-}
-#slide3:checked ~ .caption3 {
-    opacity: 1;
-    visibility: visible;
-}
-#slide4:checked ~ .caption4 {
-    opacity: 1;
-    visibility: visible;
-}
-#slide5:checked ~ .caption5 {
-    opacity: 1;
-    visibility: visible;
-}
+#slide1:checked ~ .caption1,
+#slide2:checked ~ .caption2,
+#slide3:checked ~ .caption3,
+#slide4:checked ~ .caption4,
+#slide5:checked ~ .caption5,
 #slide6:checked ~ .caption6 {
     opacity: 1;
     visibility: visible;
@@ -239,17 +200,12 @@ input {
         font-size: calc(4.5px + 1.5vw);
     }
 }
-@media (max-width: 1023px) {
-    .slider {
-        padding: 3vw 4.4vw;
-    }
-}
 @media (max-width: 767px) {
     .slider {
         height: 64.32vw;
         grid-template-columns: 1fr;
-        grid-template-rows: 10fr 2fr 2fr;
-        grid-gap: 1.5vw;
+        grid-template-rows: 10fr 1fr 1fr;
+        grid-gap: 1vw;
         grid-template-areas: "image" "controls" "caption ";
     }
     .slider__controls {
