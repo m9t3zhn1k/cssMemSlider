@@ -1,0 +1,217 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: content-box;
+}
+ul, ol, li {
+    list-style: none;
+}
+html, body {
+    min-height: 100%;
+    line-height: 125%;
+    font-size: 24px;
+    font-family: 'Ubuntu';
+    scroll-behavior: smooth;
+}
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+button {
+    background-color: transparent;
+}
+.wrapper {
+    min-height: 100vh;
+    background: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+._container {
+    width: 100%;
+    max-width: 56rem;
+}
+.header, .main, .footer {
+    width: 100%;
+    box-sizing: border-box;
+    background: #eeeeee;
+}
+.header {
+    min-height: 4rem;
+    color: #000000;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 500;
+}
+.header__container, .main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+.footer {
+    min-height: 4rem;
+    color: #000000;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__container a {
+    transition: all 0.25s;
+}
+.footer__container a:hover {
+    color: #5a5a5a;
+}
+.slider {
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    width: 100%;
+    background: #494949;
+    border-radius: 1vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 6fr 1fr;
+    grid-gap: 4%;
+    grid-template-areas: "image image" "caption controls";
+}
+.slider__image {
+    grid-area: image;
+    opacity: 0;
+    transition: all 0.4s;
+    transform: translateX(100%);
+}
+.image1 {
+    background: #000 url('img/1.webp') center/contain no-repeat;
+} 
+.image2 {
+    background: #000 url('img/2.webp') center/contain no-repeat;
+}
+.image3 {
+    background: #000 url('img/3.webp') center/contain no-repeat;
+}
+.image4 {
+    background: #000 url('img/4.webp') center/contain no-repeat;
+}
+.image5 {
+    background: #000 url('img/5.webp') center/contain no-repeat;
+}
+.image6 {
+    background: #000 url('img/6.webp') center/contain no-repeat;
+}
+.slider__caption {
+    grid-area: caption;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 130%;
+    color: #FFF;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+}
+.slider__controls {
+    grid-area: controls;
+    justify-self: flex-end;
+    display: flex;
+}
+.slider__button {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    height: 50%;
+    min-width: 1.75rem;
+    width: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    display: none;
+}
+.checkmark {
+    display: block;
+    min-height: 1rem;
+    height: 1vw;
+    min-width: 1rem;
+    width: 1vw;
+    background-color: #a1a1a1;
+    border-radius: 25%;
+    transition: all 0.2s;
+}
+.slider__button:hover .checkmark{
+    background-color: #FFFFFF;
+}
+.slider__button:active .checkmark {
+    background-color: yellowgreen;
+}
+#slide1:checked ~ .slider__controls .slider__button .checkmark__slide1,
+#slide2:checked ~ .slider__controls .slider__button .checkmark__slide2,
+#slide3:checked ~ .slider__controls .slider__button .checkmark__slide3,
+#slide4:checked ~ .slider__controls .slider__button .checkmark__slide4,
+#slide5:checked ~ .slider__controls .slider__button .checkmark__slide5,
+#slide6:checked ~ .slider__controls .slider__button .checkmark__slide6 {
+    background-color: yellow;
+}
+#slide1:checked ~ .image1,
+#slide2:checked ~ .image2,
+#slide3:checked ~ .image3,
+#slide4:checked ~ .image4,
+#slide5:checked ~ .image5,
+#slide6:checked ~ .image6 {
+    opacity: 1;
+    transform: translateX(0%);
+}
+#slide1:checked ~ .caption1,
+#slide2:checked ~ .caption2,
+#slide3:checked ~ .caption3,
+#slide4:checked ~ .caption4,
+#slide5:checked ~ .caption5,
+#slide6:checked ~ .caption6 {
+    opacity: 1;
+    visibility: visible;
+}
+@media (max-width: 1300px) {
+    .header, .footer {
+        min-height: 7.692vw;
+    }
+    html, body {
+        font-size: calc(0.2rem + 1.5vw);
+    }
+}
+@media (max-width: 767px) {
+    .slider {
+        height: 64.32vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10fr 1fr 1fr;
+        grid-gap: 1vw;
+        grid-template-areas: "image" "controls" "caption ";
+    }
+    .slider__controls {
+        justify-self: center;
+    }
+    .slider__button {
+        height: 100%;
+    }
+}
